@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Biblioteca Digital - Letras y Páginas</title>
+    <link rel="stylesheet" href="./client/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Biblioteca Digital - Letras y Páginas</h1>
+
+      <div class="tabs">
+        <div class="tab active" data-target="books">Gestión de Libros</div>
+        <div class="tab" data-target="categories">Gestión de Categorías</div>
+      </div>
+
+      <!-- Sección de Libros -->
+      <div id="books" class="content active">
+        <div class="section">
+          <h2>Registrar Nuevo Libro</h2>
+          <input type="text" id="bookTitle" placeholder="Título" />
+          <input type="text" id="bookAuthor" placeholder="Autor" />
+          <input type="text" id="bookISBN" placeholder="ISBN" />
+          <input
+            type="number"
+            id="bookPrice"
+            placeholder="Precio"
+            step="0.01"
+          />
+          <input type="number" id="bookStock" placeholder="Stock" />
+          <select id="bookCategory">
+            <option value="">Seleccionar Categoría</option>
+            <option value="1">Novela</option>
+            <option value="2">Historia</option>
+            <option value="3">Ciencia</option>
+            <option value="4">Informática</option>
+            <option value="5">Biografía</option>
+          </select>
+          <button onclick="addBook()">Registrar Libro</button>
+        </div>
+
+        <div class="section">
+          <h2>Lista de Libros</h2>
+          <input
+            type="text"
+            id="bookSearch"
+            placeholder="Buscar por título"
+            oninput="filterBooks()"
+          />
+          <div id="bookList"></div>
+        </div>
+      </div>
+
+      <!-- Sección de Categorías -->
+      <div id="categories" class="content">
+        <div class="section">
+          <h2>Registrar Nueva Categoría</h2>
+          <input
+            type="text"
+            id="categoryName"
+            placeholder="Nombre de la Categoría"
+          />
+          <button onclick="addCategory()">Crear Categoría</button>
+        </div>
+
+        <div class="section">
+          <h2>Lista de Categorías</h2>
+          <div id="categoryList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./client/js/script.js"></script>
+  </body>
+</html>
